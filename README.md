@@ -1,12 +1,17 @@
-TurfHub – Turf Booking & Management System Technologies Used: Java, Servlets, JDBC, MySQL, React.js, JavaScript, Tailwind
-•
-Developed a full-stack turf booking platform with role-based authentication, enabling users to browse, search, and book sports turfs while allowing owners to manage turfs and bookings.
-•
-Built a Servlet-based backend using Java Servlets, JDBC, and MySQL to implement CRUD operations, booking management, and database connectivity.
-•
-Implemented role-based access control, and a responsive React.js interface featuring slot booking, booking history, owner dashboard, profile management, and revenue tracking.
-•
-Designed the application using a layered architecture (React UI → Controller → DTO → DAO → MySQL Database) to improve code maintainability, modularity, and separation of concerns.
+# 🏟️ TurfHub – Turf Booking & Management System
+
+A full-stack web application that enables users to browse, search, and book sports turfs while allowing turf owners to manage their turfs, bookings, and revenue through a dedicated owner dashboard.
+
+---
+
+## 📌 Project Overview
+
+**Technologies Used:** Java, Servlets, JDBC, MySQL, React.js, JavaScript, Tailwind CSS
+
+- Developed a full-stack turf booking platform with **role-based authentication**, enabling users to browse, search, and book sports turfs while allowing owners to manage turfs and bookings.
+- Built a **Servlet-based backend** using Java Servlets, JDBC, and MySQL to implement CRUD operations, booking management, and database connectivity.
+- Implemented **role-based access control** and a responsive React.js interface featuring slot booking, booking history, owner dashboard, profile management, and revenue tracking.
+- Designed the application using a **layered architecture (React UI → Controller → DTO → DAO → MySQL Database)** to improve maintainability, modularity, and separation of concerns.
 
 ---
 
@@ -14,16 +19,16 @@ Designed the application using a layered architecture (React UI → Controller �
 
 ## 👤 User Module
 
-- User Registration & Login
-- Role-Based Authentication
+- User Registration
+- User Login
 - Browse Available Turfs
 - Search Turfs
 - View Turf Details
-- Slot-Based Booking
+- Select Date & Time Slot
+- Book Turf
 - Booking Confirmation
-- My Bookings
-- User Profile
-- Edit Profile
+- View Booking History
+- Manage User Profile
 - Change Password
 
 ---
@@ -31,27 +36,28 @@ Designed the application using a layered architecture (React UI → Controller �
 ## 🏟️ Owner Module
 
 - Owner Login
-- Dashboard
-- View Revenue
+- Owner Dashboard
+- View Revenue Summary
 - View Booking Statistics
-- Add Turf
+- Add New Turf
 - View My Turfs
-- Edit Turf
-- Owner Profile
+- Edit Turf Details
+- Manage Owner Profile
 - View Customer Bookings
 
 ---
 
-## 🔐 Authentication
+## 🔐 Authentication & Authorization
 
 - Role-Based Authentication
 - Credential-Based Login
 - Protected Routes
 - Separate User & Owner Dashboards
+- Session-Based Authentication
 
 ---
 
-# 🛠️ Technologies Used
+# 🛠️ Tech Stack
 
 ## Frontend
 
@@ -72,15 +78,35 @@ Designed the application using a layered architecture (React UI → Controller �
 - MySQL
 - Gson
 
-## Tools
+## Development Tools
 
 - Eclipse IDE
-- VS Code
+- Visual Studio Code
 - Apache Tomcat
 - MySQL Workbench
 - Git
 - GitHub
-- Postman (Testing)
+- Postman
+
+---
+
+# 🏗️ System Architecture
+
+```
+                React.js Frontend
+                       │
+                       ▼
+             Java Servlet Controllers
+                       │
+                       ▼
+                   DTO Layer
+                       │
+                       ▼
+                   DAO Layer
+                       │
+                       ▼
+                MySQL Database
+```
 
 ---
 
@@ -89,29 +115,30 @@ Designed the application using a layered architecture (React UI → Controller �
 ```
 TurfHub
 │
-├── Frontend
-│   ├── components
-│   │      ├── owner
-│   │      ├── Navbar
-│   │      ├── Footer
-│   │      ├── Hero
-│   │      ├── TurfCard
-│   │      └── ...
-│   │
-│   ├── pages
-│   │      ├── Home
-│   │      ├── Login
-│   │      ├── Signup
-│   │      ├── Booking
-│   │      ├── Profile
-│   │      ├── MyBookings
-│   │      └── owner
-│   │
-│   ├── services
-│   ├── routes
-│   └── App.jsx
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   │   ├── owner
+│   │   │   ├── Navbar
+│   │   │   ├── Footer
+│   │   │   ├── Hero
+│   │   │   ├── TurfCard
+│   │   │   └── ...
+│   │   │
+│   │   ├── pages
+│   │   │   ├── Home
+│   │   │   ├── Login
+│   │   │   ├── Signup
+│   │   │   ├── Booking
+│   │   │   ├── Profile
+│   │   │   ├── MyBookings
+│   │   │   └── owner
+│   │   │
+│   │   ├── services
+│   │   ├── routes
+│   │   └── App.jsx
 │
-├── Backend
+├── backend
 │   ├── controller
 │   ├── dao
 │   ├── dto
@@ -119,7 +146,7 @@ TurfHub
 │   ├── utility
 │   └── images
 │
-└── Database
+└── database
     └── MySQL
 ```
 
@@ -127,93 +154,77 @@ TurfHub
 
 # 🗄️ Database Tables
 
-- users
-- turfs
-- turf_images
-- turf_sports
-- bookings
+- Users
+- Turfs
+- Turf_Images
+- Turf_Sports
+- Bookings
 
 ---
 
-# 🔄 Application Flow
+# 🔄 Application Workflow
+
+## User Flow
 
 ```
-User
-
-↓
-
-Register / Login
-
-↓
-
+Register/Login
+      │
+      ▼
 Browse Turfs
-
-↓
-
+      │
+      ▼
 Search Turf
-
-↓
-
+      │
+      ▼
 View Turf Details
-
-↓
-
-Select Date & Slot
-
-↓
-
+      │
+      ▼
+Choose Date & Time Slot
+      │
+      ▼
 Book Turf
-
-↓
-
+      │
+      ▼
 Booking Confirmation
-
-↓
-
-My Bookings
+      │
+      ▼
+Booking History
 ```
 
 ---
 
+## Owner Flow
+
 ```
-Owner
-
-↓
-
 Login
-
-↓
-
+   │
+   ▼
 Dashboard
-
-↓
-
+   │
+   ▼
 Manage Turfs
-
-↓
-
+   │
+   ▼
 View Bookings
-
-↓
-
-Revenue Summary
-
-↓
-
-Profile
+   │
+   ▼
+Revenue Dashboard
+   │
+   ▼
+Profile Management
 ```
 
 ---
 
-# 📸 Screens
+# 📸 Application Screens
 
-- Home Page
+- Home
 - Login
-- Signup
+- Registration
 - Turf Listing
 - Turf Details
 - Booking Page
-- My Bookings
+- Booking History
 - User Profile
 - Owner Dashboard
 - My Turfs
@@ -223,7 +234,7 @@ Profile
 
 ---
 
-# ⚙️ Installation
+# ⚙️ Installation Guide
 
 ## Clone Repository
 
@@ -233,17 +244,15 @@ git clone https://github.com/your-username/TurfHub.git
 
 ---
 
-## Frontend
+## Frontend Setup
 
 ```bash
 cd frontend
-
 npm install
-
 npm run dev
 ```
 
-Runs on
+Application runs at
 
 ```
 http://localhost:5173
@@ -251,16 +260,15 @@ http://localhost:5173
 
 ---
 
-## Backend
+## Backend Setup
 
-Import the project into **Eclipse IDE**
+1. Import the project into Eclipse IDE.
+2. Configure Apache Tomcat.
+3. Create the MySQL database.
+4. Update database credentials.
+5. Run the project.
 
-Configure
-
-- Apache Tomcat
-- MySQL Database
-
-Run the project on
+Backend URL
 
 ```
 http://localhost:8080
@@ -270,63 +278,68 @@ http://localhost:8080
 
 # 🗃️ Database Configuration
 
-Update database credentials inside
+Update the database credentials inside:
 
 ```
 DBConnection.java
 ```
 
-Example
-
 ```java
 URL = jdbc:mysql://localhost:3306/turf_booking
-
 USERNAME = root
-
 PASSWORD = your_password
 ```
 
 ---
 
-# 🔒 Authentication Flow
+# 🔐 Authentication Flow
 
 ```
-User Login
-      ↓
-Role Check
-      ↓
-USER  → Home
-
-OWNER → Owner Dashboard
+Login
+   │
+   ▼
+Verify Credentials
+   │
+   ▼
+Check Role
+   │
+   ├──────────────► USER
+   │                   │
+   │                   ▼
+   │               User Dashboard
+   │
+   └──────────────► OWNER
+                       │
+                       ▼
+                Owner Dashboard
 ```
-
-Protected routes prevent unauthorized access to user and owner pages.
 
 ---
 
-# ✨ Key Features
+# ✨ Key Highlights
 
-- Full-Stack Architecture
-- Responsive UI
+- Full-Stack Web Application
+- Layered Architecture
 - Role-Based Authentication
-- Turf Management
+- Protected Routes
+- CRUD Operations
+- Slot-Based Booking System
+- Image Upload
 - Booking Management
 - Revenue Dashboard
-- CRUD Operations
-- Image Upload
-- Protected Routes
+- Responsive UI
 - MySQL Database Integration
 
 ---
 
-# 🚀 Future Scope
+# 🚀 Future Enhancements
 
-- Admin Panel
-- City-Based Turf Filtering
-- Advanced Search & Filters
-- Reviews & Ratings
+- Admin Dashboard
 - Online Payment Gateway
+- Reviews & Ratings
 - Notifications
+- City-Based Filtering
+- Advanced Search
 - Booking Analytics
 - AI-Based Turf Recommendations
 - Mobile Application
@@ -337,11 +350,12 @@ Protected routes prevent unauthorized access to user and owner pages.
 
 **Momin Mohammed Rehan**
 
-- Java Full Stack Developer
-- React.js | Java | Servlets | JDBC | MySQL
+Java Full Stack Developer
+
+**Tech Stack:** Java • Servlets • JDBC • MySQL • React.js • Tailwind CSS
 
 ---
 
-# ⭐ If you like this project
+## ⭐ Support
 
-Give this repository a ⭐ on GitHub.
+If you found this project useful, consider giving it a **⭐ Star** on GitHub.
