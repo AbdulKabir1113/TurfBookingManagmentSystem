@@ -1,8 +1,12 @@
-# 🏟️ TurfHub – Turf Booking & Management System
-
-A full-stack Turf Booking & Management System that allows users to browse, search, and book sports turfs while enabling turf owners to manage their turfs, bookings, and dashboard through a dedicated owner portal.
-
-The project is built using **React.js** for the frontend and **Java Servlets, JDBC, and MySQL** for the backend.
+TurfHub – Turf Booking & Management System Technologies Used: Java, Servlets, JDBC, MySQL, React.js, JavaScript, Tailwind
+•
+Developed a full-stack turf booking platform with role-based authentication, enabling users to browse, search, and book sports turfs while allowing owners to manage turfs and bookings.
+•
+Built a Servlet-based backend using Java Servlets, JDBC, and MySQL to implement CRUD operations, booking management, and database connectivity.
+•
+Implemented role-based access control, and a responsive React.js interface featuring slot booking, booking history, owner dashboard, profile management, and revenue tracking.
+•
+Designed the application using a layered architecture (React UI → Controller → DTO → DAO → MySQL Database) to improve code maintainability, modularity, and separation of concerns.
 
 ---
 
